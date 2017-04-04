@@ -5,6 +5,9 @@
 
 'use strict';
 
+let yaml = require('js-yaml');
+let fs   = require('fs');
+
 const defaultTestUser = 'Moofasa';
 const defaultLastName = 'Test';
 const defaultEmail = 'testing@testmail.com';
@@ -247,6 +250,16 @@ let AuthWizard = function() {
             myself.createUser(userData);
         });
     };
+
+    this.loadYAML = function(filename) {
+        // Get document, or throw exception on error
+        try {
+            return yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
 };
 
 module.exports = new AuthWizard();
