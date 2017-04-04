@@ -1,0 +1,37 @@
+# Users
+users:
+  - username: user01
+    name:     Test
+    lastName: Testerson
+    email:    user01@tester.com
+    password: password1234
+  - username: user02
+    name:     Test
+    lastName: Testerson
+    email:    user02@tester.com
+    password: password1234
+  - username: user03
+    name:     Test
+    lastName: Testerson
+    email:    user03@tester.com
+    password: password1234
+  - username: user04
+    name:     Test
+    lastName: Testerson
+    email:    user04@tester.com
+    password: password1234
+  - username: user05
+    name:     Test
+    lastName: Testerson
+    email:    user05@tester.com
+    password: password1234
+  - username: user06
+    name:     Test
+    lastName: Testerson
+    email:    user06@tester.com
+    password: password1234
+  - username: user07
+    name:     Test
+    lastName: Testerson
+    email:    user07@tester.com
+    password: password1234
