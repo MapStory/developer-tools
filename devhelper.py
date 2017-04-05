@@ -18,20 +18,25 @@ def loadYAML(filename):
 
 
 @click.command()
-@click.option('--name', default='World', help='Overrides the name to greet')
-@click.option('--repeat', default=1, help='Times to repeat')
+@click.option('--auto', default=True, help='Automatically create test data')
+# @click.option('--users', type=click.File('r'), default='src/data/users.yaml', required=False, help='The users yaml file location')
 @click.argument('out', type=click.File('w'), default='-', required=False)
-def cli(name, repeat, out):
-    """The classic greeting"""
-
-    click.echo("Hello %s!" % (name,), file=out)
-
+def cli(auto, out):
+    """Mapstory Developer Tool
+    
+    Usage:
+        use --auto for creating test data
+    """
+    # click.echo("Hello %s!" % (name,), file=out)
     # subprocess.Popen(["nohup", "webdriver-manager", "start"])
     # time.sleep(3)
 
     # Starts the protractor specs
     # subprocess.call("protractor src/conf.js",
-    subprocess.call(["protractor","src/conf.js"])
+    if auto:
+        click.echo("Creating automatic test data!", file=out)
+        subprocess.call(["protractor","src/conf.js"])
+
 
 
 if __name__ == '__main__':

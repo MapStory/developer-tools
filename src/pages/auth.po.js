@@ -250,16 +250,6 @@ let AuthWizard = function() {
             myself.createUser(userData);
         });
     };
-
-    this.loadYAML = function(filename) {
-        // Get document, or throw exception on error
-        try {
-            return yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
-        } catch (e) {
-            console.log(e);
-        }
-    };
-
 };
 
 module.exports = new AuthWizard();
