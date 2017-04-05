@@ -1,0 +1,53 @@
+# Users
+layers:
+  username: admin
+  password: admin
+  files:
+    - title: americancivilwar
+      filename: american_civil_war.zip
+      start_time: BeginDate
+
+    - title: lewis_and_clark_csv
+      filename: lewisandclarktrail.csv
+      start_time: e_date
+
+    - title: charging_stations
+      filename: Charging_Stations_With_Dates.csv
+      start_time: Open_Date
+
+    - title: civil_war
+      filename: civilwar.zip
+      start_time: BeginDate
+
+    - title: free_speech
+      filename: FreeSpeechData.csv
+      start_time: Year
+
+    - title: lewis_and_clark_zip
+      filename: lewis_clark.zip
+      start_time: e_date
+
+    - title: historical_pubs
+      filename: London Historical Pubs_1839.csv
+      start_time: Year
+
+    - title: pubs_append
+      filename: LondonPub_1841AB_test_for_append.csv
+      start_time: Year
+
+    - title: prisons
+      filename: PRISONS.csv
+      start_time: Year
+
+    - title: railroads
+      filename: railroads.zip
+      start_time: YEAR
+
+    - title: revolutionary_war
+      filename: Revolutionary War.csv
+      start_time: Date
+
+    - title: states
+      filename: states.zip
+      start_time: START_DATE
+
