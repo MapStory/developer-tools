@@ -176,27 +176,32 @@ let LayerUpload = function() {
      * Completes Upload Layer - Step 6
      */
     this.uploadLayer_Step6 = function(wait_time) {
+        // Starts the upload
         let importButton = this.step6.element(by.buttonText('Import Layer'));
         expect(importButton.waitReady()).toBeTruthy();
         importButton.click();
 
-        browser.driver.sleep(wait_time);
-
+        // Wait for the upload to finish
+        // browser.sleep(parseInt(wait_time, 10));
         let finishButton = this.step6.element(by.buttonText('View Layer'));
-        expect(finishButton.waitReady()).toBeTruthy();
+        let myself = this;
+        browser.wait(EC.elementToBeClickable(finishButton), wait_time).then(function(){
+            // Done
+            expect(finishButton.waitReady()).toBeTruthy();
 
-        let stepTitle = this.step6.$$('.step-title').first();
-        stepTitle.getText(function(text){
-            expect(text).toEqual('Congratulations! Click below to view your new Layer.');
+            // Success message
+            let stepTitle = myself.step6.$$('.step-title').first();
+            stepTitle.getText(function(text){
+                expect(text).toEqual('Congratulations! Click below to view your new Layer.');
+            });
+
+            // Close the wizard
+            finishButton.click();
         });
-
-        finishButton.click();
-
-        return true;
     };
 
 
-    this.uploadLayer = function (filename, time_start, wait) {
+    this.uploadLayer = function (filename, time_start, upload_time, is_published) {
         browser.sleep(500);
         console.log('\nUpload Layer Step 1...');
         let step1 = this.uploadLayer_Step1();
@@ -219,11 +224,20 @@ let LayerUpload = function() {
 
         browser.sleep(500);
         console.log('\nUpload Layer Step 6...');
-        let step6 = this.uploadLayer_Step6(wait);
+        let step6 = this.uploadLayer_Step6(upload_time);
 
         browser.sleep(2000);
 
-        return true;
+        if(is_published) {
+            let is_published_checkbox = element(by.css('#id_is_published'));
+            expect(is_published_checkbox.waitReady()).toBeTruthy();
+
+            is_published_checkbox.click();
+
+            let saveButton = element(by.partialButtonText('Save'));
+            saveButton.click();
+
+        }
     };
 
 

@@ -3,6 +3,8 @@ layers:
   username: admin
   password: admin
   files:
-    - title: lewis_and_clark_csv
-      filename: lewisandclarktrail.csv
-      start_time: e_date
+    - title: charging_stations
+      filename: Charging_Stations_With_Dates.csv
+      start_time: Open_Date
+      upload_time: 50000
+      published: YES
