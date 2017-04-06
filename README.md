@@ -11,7 +11,8 @@ A tool for mapstory developers. Misc helpers.
 Install
 -------
 
-Run `install.sh` script locally
+1. Clone this repo
+2. Run `install.sh` script locally
 
 `./install/sh`
 
@@ -19,6 +20,8 @@ Usage
 -----
 
 Run `devhelper --help` to view usage
+
+Run `devhelper` to automatically install data
 
 Creating test data
 ------------------
