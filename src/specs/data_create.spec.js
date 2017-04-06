@@ -23,7 +23,7 @@ describe('Create test data', function() {
         browser.waitForAngular();
     });
 
-    xit('should create an array of users from yaml', () => {
+    it('should create an array of users from yaml', () => {
         let data = yaml_helper.loadYAML('src/data/users.yaml');
         auth.createUsersFromList(data.users);
     });

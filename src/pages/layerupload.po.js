@@ -236,7 +236,6 @@ let LayerUpload = function() {
 
             let saveButton = element(by.partialButtonText('Save'));
             saveButton.click();
-
         }
     };
 
