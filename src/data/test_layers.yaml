@@ -1,0 +1,8 @@
+# Users
+layers:
+  username: admin
+  password: admin
+  files:
+    - title: lewis_and_clark_csv
+      filename: lewisandclarktrail.csv
+      start_time: e_date

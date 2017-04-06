@@ -18,7 +18,7 @@ let EC = protractor.ExpectedConditions;
 require('../tools/waitReady.js');
 
 let AuthWizard = function() {
-    this.loginIcon = element(by.css('a.nav-icon[role="button"]'));
+    this.loginIcon = element(by.linkText('Log In'));
     this.loginModal = element(by.css('.modal-content'));
     this.navigationTabs = element(by.css('.nav.nav-tabs'));
     this.adminLink = element(by.linkText('admin'));
@@ -249,6 +249,30 @@ let AuthWizard = function() {
         list_of_users.forEach( (userData) => {
             myself.createUser(userData);
         });
+    };
+
+    this.login = function(username, password) {
+        // Click the login Icon
+        expect(this.loginIcon.waitReady()).toBeTruthy();
+        this.loginIcon.click();
+
+        expect(this.loginForm.isPresent()).toBe(true);
+        browser.wait(EC.visibilityOf(this.loginForm), 5000);
+        expect(this.loginForm.isDisplayed()).toBeTruthy();
+
+
+        // Input username
+        expect(this.usernameInput.isPresent()).toBe(true);
+        this.usernameInput.sendKeys(username);
+
+        // Input password
+        expect(this.passwordInput.isPresent()).toBe(true);
+        this.passwordInput.sendKeys(password);
+
+        // Press the login button
+        expect(this.loginButton.isPresent()).toBe(true);
+        this.loginButton.click();
+
     };
 };
 

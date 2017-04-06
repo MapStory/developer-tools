@@ -20,15 +20,27 @@ let timeout = 30000;
 let multi_cabapilities = [{
     'browserName' : 'chrome',
     'chromeOptions': {
-        args: ['--no-sandbox', '--test-type=browser'],
+        args: [
+            '--no-sandbox',
+            '--test-type=browser',
+            '--disable-cache',
+            '--disable-application-cache',
+            '--disable-offline-load-stale-cache',
+            '--disk-cache-size=0',
+            '--v8-cache-options=off'
+        ],
         prefs: {
             'download': {
                 'prompt_for_download': false,
                 'default_directory': '../downloads/'
+            },
+            'credentials_enable_service': false,
+            'profile': {
+                'password_manager_enabled': false
             }
         }
-    }}
-];
+    }
+}];
 
 
 //----------------------
