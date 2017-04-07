@@ -3,6 +3,11 @@ Mapstory Developer Tools
 
 *WIP*
 
+Demo
+----
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cw5erTPoD1c" frameborder="0" allowfullscreen></iframe>
+
 About
 -----
 
