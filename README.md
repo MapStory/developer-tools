@@ -14,14 +14,14 @@ Install
 1. Clone this repo
 2. Run `install.sh` script locally
 
-`./install/sh`
+`./install.sh`
 
 Usage
 -----
 
-> Mapstory server needs to be running (`vagrant reload`)
+> Note: Mapstory server needs to be running (`vagrant reload`)
 
-> You need to have selenium running (`webdriver-manager start`)
+> Note: You need to have selenium running (`webdriver-manager start`)
 
 Once you have both servers running, then :
 
