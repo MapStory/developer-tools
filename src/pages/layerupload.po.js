@@ -202,27 +202,27 @@ let LayerUpload = function() {
 
 
     this.uploadLayer = function (filename, time_start, upload_time, is_published) {
-        browser.sleep(500);
+        // browser.sleep(500);
         console.log('\nUpload Layer Step 1...');
         let step1 = this.uploadLayer_Step1();
 
-        browser.sleep(500);
+        // browser.sleep(500);
         console.log('\nUpload Layer Step 2...');
         let step2 = this.uploadLayer_Step2(filename);
 
-        browser.sleep(500);
+        // browser.sleep(500);
         console.log('\nUpload Layer Step 3...');
         let step3 = this.uploadLayer_Step3();
 
-        browser.sleep(500);
+        // browser.sleep(500);
         console.log('\nUpload Layer Step 4...');
         let step4 = this.uploadLayer_Step4(time_start);
 
-        browser.sleep(500);
+        // browser.sleep(500);
         console.log('\nUpload Layer Step 5...');
         let step5 = this.uploadLayer_Step5();
 
-        browser.sleep(500);
+        // browser.sleep(500);
         console.log('\nUpload Layer Step 6...');
         let step6 = this.uploadLayer_Step6(upload_time);
 

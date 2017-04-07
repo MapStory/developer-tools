@@ -17,6 +17,8 @@ let EC = protractor.ExpectedConditions;
 
 require('../tools/waitReady.js');
 
+const targetURL = 'http://demo.mapstory.org';
+
 let AuthWizard = function() {
     this.loginIcon = element(by.linkText('Log In'));
     this.loginModal = element(by.css('.modal-content'));
@@ -43,7 +45,7 @@ let AuthWizard = function() {
      */
     this.get = function() {
         // Refresh page
-        browser.get('http://192.168.56.151');
+        browser.get(targetURL);
         browser.waitForAngular();
 
         let myself = this;
@@ -155,7 +157,7 @@ let AuthWizard = function() {
                 myself.logoutLink.click();
 
                 // Refresh page
-                browser.get('http://192.168.56.151');
+                browser.get(targetURL);
             }
         });
     };
@@ -165,7 +167,7 @@ let AuthWizard = function() {
 
         browser.driver.manage().window().setSize(1440, 800);
         browser.driver.manage().window().setPosition(0, 0);
-        browser.get('http://192.168.56.151');
+        browser.get(targetURL);
         browser.waitForAngular();
 
         expect(this.loginIcon.waitReady()).toBeTruthy();
