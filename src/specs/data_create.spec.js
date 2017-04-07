@@ -7,10 +7,18 @@
 
 
 // let EC = protractor.ExpectedConditions;
-require('../tools/waitReady.js');
-let yaml_helper = require('../tools/yaml_helper');
+
 let fs = require('fs');
 let path = require('path');
+require('../tools/waitReady.js');
+let yaml_helper = require('../tools/yaml_helper');
+let screenshotHelper = require('../tools/screenshot_helper');
+
+// Setup screenshots on error
+screenshotHelper.setup();
+
+const targetURL = 'http://demo.mapstory.org';
+const localURL = 'http://192.168.56.151';
 
 describe('Create test data', function() {
     let auth = require('../pages/auth.po');
@@ -19,7 +27,7 @@ describe('Create test data', function() {
     beforeEach(function(){
         browser.driver.manage().window().setSize(1440, 800);
         browser.driver.manage().window().setPosition(0, 0);
-        browser.get('http://192.168.56.151');
+        browser.get(targetURL);
         browser.waitForAngular();
     });
 
@@ -38,7 +46,7 @@ describe('Create test data', function() {
         let password = data.layers.password;
 
        auth.login(username, password);
-       browser.sleep(1000);
+       // browser.sleep(1000);
     });
 
 
@@ -87,12 +95,12 @@ describe('Create test data', function() {
 
             console.log('\nProcessing: ' + title);
 
-            browser.sleep(2000);
+            // browser.sleep(2000);
             let fileLocation = '../files/' + fileData.filename;
 
             browser.driver.manage().window().setSize(1440, 800);
             browser.driver.manage().window().setPosition(0, 0);
-            browser.get('http://192.168.56.151');
+            browser.get(targetURL);
             browser.waitForAngular();
 
             layer_upload.uploadLayer(fileLocation, start_time, upload_time, is_published);

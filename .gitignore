@@ -6,3 +6,4 @@ node-*/
 nohup.out
 result.json
 node_modules/
+errors/*.png
