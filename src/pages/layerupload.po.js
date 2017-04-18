@@ -203,6 +203,7 @@ let LayerUpload = function() {
 
     this.uploadLayer = function (filename, time_start, upload_time, is_published) {
         // browser.sleep(500);
+
         // console.log('\nUpload Layer Step 1...');
         let step1 = this.uploadLayer_Step1();
 
@@ -244,6 +245,7 @@ let LayerUpload = function() {
             is_published_checkbox.click();
 
             // Click 'Save'
+
             let saveButton = element(by.partialButtonText('Save'));
             saveButton.click();
         }
