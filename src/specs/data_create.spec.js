@@ -17,8 +17,9 @@ let screenshotHelper = require('../tools/screenshot_helper');
 // Setup screenshots on error
 screenshotHelper.setup();
 
-const targetURL = 'http://demo.mapstory.org';
+// const targetURL = 'http://demo.mapstory.org';
 const localURL = 'http://192.168.56.151';
+const targetURL = localURL;
 
 describe('Create test data', function() {
     let auth = require('../pages/auth.po');

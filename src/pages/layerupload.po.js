@@ -229,6 +229,8 @@ let LayerUpload = function() {
         browser.sleep(2000);
 
         if(is_published) {
+            // This behavior has changed and we need to open the pop-up manually
+            // issue #2
             let is_published_checkbox = element(by.css('#id_is_published'));
             expect(is_published_checkbox.waitReady()).toBeTruthy();
 
