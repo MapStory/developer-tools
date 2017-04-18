@@ -203,36 +203,48 @@ let LayerUpload = function() {
 
     this.uploadLayer = function (filename, time_start, upload_time, is_published) {
         // browser.sleep(500);
-        console.log('\nUpload Layer Step 1...');
+
+        // console.log('\nUpload Layer Step 1...');
         let step1 = this.uploadLayer_Step1();
 
         // browser.sleep(500);
-        console.log('\nUpload Layer Step 2...');
+        // console.log('\nUpload Layer Step 2...');
         let step2 = this.uploadLayer_Step2(filename);
 
         // browser.sleep(500);
-        console.log('\nUpload Layer Step 3...');
+        // console.log('\nUpload Layer Step 3...');
         let step3 = this.uploadLayer_Step3();
 
         // browser.sleep(500);
-        console.log('\nUpload Layer Step 4...');
+        // console.log('\nUpload Layer Step 4...');
         let step4 = this.uploadLayer_Step4(time_start);
 
         // browser.sleep(500);
-        console.log('\nUpload Layer Step 5...');
+        // console.log('\nUpload Layer Step 5...');
         let step5 = this.uploadLayer_Step5();
 
         // browser.sleep(500);
-        console.log('\nUpload Layer Step 6...');
+        // console.log('\nUpload Layer Step 6...');
         let step6 = this.uploadLayer_Step6(upload_time);
 
-        browser.sleep(2000);
-
         if(is_published) {
+            //----------------------
+            // This behavior has changed and we need to
+            // open the pop-up manually (Issue #2)
+            //----------------------
+
+            // Click 'Update Metadata'
+            let update_metadata_button = element(by.partialButtonText('Update Metadata'));
+            expect(update_metadata_button.waitReady()).toBeTruthy();
+            update_metadata_button.click();
+            browser.sleep(2000);
+
+            // Click 'Is Published'
             let is_published_checkbox = element(by.css('#id_is_published'));
             expect(is_published_checkbox.waitReady()).toBeTruthy();
-
             is_published_checkbox.click();
+
+            // Click 'Save'
 
             let saveButton = element(by.partialButtonText('Save'));
             saveButton.click();

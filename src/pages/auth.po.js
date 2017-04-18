@@ -17,7 +17,10 @@ let EC = protractor.ExpectedConditions;
 
 require('../tools/waitReady.js');
 
-const targetURL = 'http://demo.mapstory.org';
+
+// const targetURL = 'http://demo.mapstory.org';
+const targetURL = 'http://192.168.56.151';
+
 
 let AuthWizard = function() {
     this.loginIcon = element(by.linkText('Log In'));
